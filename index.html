@@ -8,69 +8,110 @@
 <body>
     <h1>Tejaswi, Gannamaneni</h1>
     <h6>MY beloved location uis cleveland</h6>
-    <p>Some are a bit of a hike <b>(pun fully intended)</b>, but every one of them is worth the trip. Cleveland’s natural
-        wonders are arguably few and far between, but what they lack in <b>density,</b> they make up for in diversity. Glacial
+    <p>Some are a bit of a hike <b>(pun fully intended)</b>, but every one of them is worth the trip. Cleveland’s
+        natural
+        wonders are arguably few and far between, but what they lack in <b>density,</b> they make up for in diversity.
+        Glacial
         rock formations, sand dunes, and gem-rich caves make this list.
 
     </p>
     <hr>
-      
 
-      <h4>Directions from maryville to cleveland </h4>
-      <ol>
+
+    <h4>Directions from maryville to cleveland </h4>
+    <ol>
         <li>Book the flight from the kansas to cleveland</li>
         <li>Book cab or entrepise from the maryville to kansas airport </li>
         <li>After reaching there their are diffrent types of transportation to reach your deztination</li>
-          <ol type="i">
+        <ol type="i">
             <li>public transportation</li>
             <li>Train</li>
             <li>Cab</li>
-          </ol>
-        </li>            
+        </ol>
+        </li>
         </li>
         <li>After reaching their its upto you.</li>
     </ol>
-      </ol>
-    
-    
+    </ol>
+
+
     <ul>
-      <ul>
-        <li>Phone</li>
-        <li>Trendy cloths</li>
-        <li>plenty of dollars</li>
-          </ul>
+        <ul>
+            <li>Phone</li>
+            <li>Trendy cloths</li>
+            <li>plenty of dollars</li>
+        </ul>
 
-          <a href="aboutme.html">Picture of Power Ranger</a>
-    
-    
-         
-          <hr>
+        <a href="aboutme.html">Picture of Power Ranger</a>
 
 
-          
+
+        <hr>
+
+
+
         </h4>Information in tabular form</h4>
         <p>The foods I would suggust to you</p>
         <table border="2">
-          <tr>
-            <th>Food</th>
-            <th>Location</th>
-            <th>Price</th>
-          <tr>
-            <td>Fried Rice</td>
-            <td>walnut street</td>
-            <td>1000</td>
-          </tr>
-          <tr>
-            <td>french fries</td>
-            <td>Mc Donalds</td>
-            <td>500</td>
-          </tr>
-          <tr>
-            <td>Dosa</td>
-            <td>Mytri</td>
-            <td>100</td>
-          </tr>
+            <tr>
+                <th>Food</th>
+                <th>Location</th>
+                <th>Price</th>
+            <tr>
+                <td>Fried Rice</td>
+                <td>walnut street</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>french fries</td>
+                <td>Mc Donalds</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>Dosa</td>
+                <td>Mytri</td>
+                <td>100</td>
+            </tr>
         </table>
+
+        <hr>
+        <h4>Algaritham
+            Finding the lexicographical next balanced sequence<h4>
+                <blockquote>
+                    we discuss some classic problems involving balanced bracket sequences (for simplicity we will only
+                    call them sequences): validation, number of sequences, finding the lexicographical next sequence,
+                    generating all sequences of a certain size, finding the index of sequence, and generating the k-th
+                    sequences. We will also discuss two variations for the problems, the simpler version when only one
+                    type of brackets is allowed, and the harder case when there are multiple types.
+                </blockquote>
+                <a href="https://cp-algorithms.com/combinatorics/bracket_sequences.html">link to the source</a>
+
+                <pre>
+        <code>
+            bool next_balanced_sequence(string & s) {
+                int n = s.size();
+                int depth = 0;
+                for (int i = n - 1; i >= 0; i--) {
+                    if (s[i] == '(')
+                        depth--;
+                    else
+                        depth++;
+            
+                    if (s[i] == '(' && depth > 0) {
+                        depth--;
+                        int open = (n - i - 1 - depth) / 2;
+                        int close = n - i - 1 - open;
+                        string next = s.substr(0, i) + ')' + string(open, '(') + string(close, ')');
+                        s.swap(next);
+                        return true;
+                    }
+                }
+                return false;
+            }
+          </code>
+        </pre>
+
+
 </body>
 
 </html>
